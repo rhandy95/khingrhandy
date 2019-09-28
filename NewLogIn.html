@@ -1,0 +1,88 @@
+<html>
+<head> 
+    <Title>Log In Form</Title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="Login.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<BODY>
+     <div class="contaner-fluid bg">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                  
+
+             <form class="contaner-fluid">
+                <a class="About" href="https://www.google.com.ph/">About</a>
+             </form>
+                <form class="Login"> 
+                    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+                    <label for="Login"> Log In</label> 
+                </form>
+                <form class="registerform"> 
+                <div class="form-group">
+                            <label for="UserName">&nbsp User Name</label>
+                            <input type="text"  class="fadeIn second" id="txtUsername"  name="login" placeholder="login">
+                          </div>
+                          <div class="form-group">
+                            <label for="InputPassword1">&nbsp&nbsp&nbsp &nbspPassword</label>
+                            <input type="password" class="fadeIn second" id="txtPassword"  name="login" placeholder="password">
+                          </div>
+
+                          <div id="validation-error" class="d-none">
+                                Invalid username or password
+                        
+                          <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="Remember Me">
+                                <label class="form-check-label" for="materialUnchecked">Remenber Me</label>
+                            </div>
+
+                        </div>
+                        <input type="submit" id="btnSubmit" class="fadeIn fourth" value="Log In">
+                    </div>
+                          
+                </form>
+                <div id="formFooter">
+                     <a class="underlineHover" href="#">Forgot Password?</a>
+                 </div>
+                        
+     <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    </div>
+ </div>
+</form>
+
+<script src="jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <script>
+            $(document).ready(function(){
+                $("#btnSubmit").click(function (){
+                    $("#validation-error").addClass("d-none");
+                    var userName = $("#txtUsername").val();
+                    var password = $("#txtPassword").val();
+
+
+                    if (userName === 'admin' && password === '123456admin') {
+                        alert('login success')
+                    }
+                    else {
+                        alert('invalid username or password');
+                        $("#validation-error").removeClass("d-none");
+                    }
+                });
+            })
+        </script>
+</script>
+
+</script>
+
+
+
+
+
+ </body>
+ </html>    
+    
