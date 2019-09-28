@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first pt-4">
+                <h4>Login</h4>
+            </div>
+
+            <!-- Login Form -->
+            <div>
+                <input type="text" id="txtUsername" class="fadeIn second" name="login" placeholder="login">
+                <input type="text" id="txtPassword" class="fadeIn third" name="login" placeholder="password">
+                <div id="validation-error" class="d-none">
+                    Invalid username or password
+                </div>
+                <input type="submit" id="btnSubmit" class="fadeIn fourth" value="Log In">
+            </div>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $("#btnSubmit").click(function (){
+                    $("#validation-error").addClass("d-none");
+                    var userName = $("#txtUsername").val();
+                    var password = $("#txtPassword").val();
+
+
+                    if (userName === 'admin' && password === '123456admin') {
+                        alert('login success')
+                    }
+                    else {
+                        alert('invalid username or password');
+                        $("#validation-error").removeClass("d-none");
+                    }
+                });
+            })
+        </script>
+</body>
+
+</html>

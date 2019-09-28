@@ -1,0 +1,92 @@
+
+<html>
+
+<head>
+    <title>JQuery na malupet</title>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>
+                <label>First number</label>
+            </td>
+            <td>
+                <input id="txtFirstNumber" type="text" />
+                <label id="lblFirstNumber"></label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Second number</label>
+            </td>
+            <td>
+                <input id="txtSecondNumber" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Answer</label>
+            </td>
+            <td>
+                <input id="txtAnswer" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="computeAnswer('add')">Add</button>
+                <button onclick="computeAnswer('subtract')">Subtract</button>
+            </td>
+        </tr>
+    </table>
+    <ul>
+        <li>
+            <a href="#">Link 1</a>
+        </li>
+        <li>
+            <a href="#">Link 2</a>
+        </li>
+        <li>
+            <a href="#">Link 3</a>
+        </li>
+    </ul>
+    <button id="hideList">Hide List</button>
+    <button id="showList">Show List</button>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        function computeAnswer(operation) {
+            $('#txtAnswer').css("background-color", "green");
+            var firstNum = Number($('#txtFirstNumber').val());
+            var secondNum = Number($('#txtSecondNumber').val());
+            console.log(firstNum + secondNum);
+            var oldValue = $('#txtAnswer').val();
+            console.log('The old value of answer is ' + oldValue);
+            $('#txtAnswer').val(firstNum + secondNum);
+        }
+
+        $(document).ready(function(){
+            $("ul li a").click(function () {
+                alert('link clicked');
+                $(this).css("background-color", "red");
+                $(this).css("font-size", "26px");
+            });
+
+            $("#txtFirstNumber").keyup(function () {
+                var valueOfFirstNum = $(this).val();
+                $("#lblFirstNumber").text(valueOfFirstNum);
+            });
+
+            $("#hideList").click(function () {
+                $("ul").fadeOut(2000);
+            });
+
+            $("#showList").click(function () {
+                $("ul").fadeIn(2000);
+            });
+        });
+    </script>
+</body>
+
+</html>
